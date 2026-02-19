@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-grow-green to-grow-light-green text-white px-6 py-3 rounded-lg font-semibold hover:from-grow-light-green hover:to-grow-green transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border-2 border-grow-green text-grow-green px-6 py-3 rounded-lg font-semibold hover:bg-grow-green hover:text-white transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105;
+  }
+  
+  .btn-accent {
+    @apply bg-gradient-to-r from-grow-accent to-grow-mint text-white px-6 py-3 rounded-lg font-semibold hover:from-grow-mint hover:to-grow-accent transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105;
+  }
+  
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-grow-green to-grow-accent;
+  }
+  
+  .card-hover {
+    @apply transform hover:scale-105 transition-all duration-300 hover:shadow-xl;
+  }
+  
+  .section-gradient {
+    @apply bg-gradient-to-br from-white via-gray-50 to-grow-accent bg-opacity-10;
+  }
+}
+
+@layer utilities {
+  .scrollBackground {
+    animation: scrollBackground 20s linear infinite;
+  }
+  
+  @keyframes scrollBackground {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+}
