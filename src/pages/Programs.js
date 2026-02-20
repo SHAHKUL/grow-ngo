@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import Hero from '../components/Hero';
-import SectionCard from '../components/SectionCard';
+// import SectionCard from '../components/SectionCard';
 
 const Programs = () => {
   const environmentRef = useRef(null);
