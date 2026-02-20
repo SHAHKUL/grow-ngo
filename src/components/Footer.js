@@ -33,7 +33,7 @@ const Footer = () => {
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
-                  href="#"
+                  href="/"
                   className="text-white hover:text-grow-accent transition-colors duration-300"
                   aria-label={social.name}
                 >
