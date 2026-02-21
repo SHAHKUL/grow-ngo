@@ -7,17 +7,17 @@ const Contact = () => {
     {
       icon: "📍",
       title: "Address",
-      details: "123 Community Lane, City, State 12345",
+      details: "No:1, Netaji Nagar, Eraiyanur, Tindivanam, Villupuram, Tamil Nadu-604001",
     },
     {
       icon: "📞",
       title: "Phone",
-      details: "+1 (555) 123-4567",
+      details: "(+91) 9092628338",
     },
     {
       icon: "✉️",
       title: "Email",
-      details: "info@growfoundation.org",
+      details: "growswf@gmail.com",
     },
     {
       icon: "🕐",
@@ -56,6 +56,7 @@ const Contact = () => {
         title="Contact Us"
         subtitle="Get in touch with GROW Foundation. We'd love to hear from you and discuss how we can work together."
         showButtons={false}
+         backgroundImage="contact"
       />
 
       {/* Contact Information */}
@@ -135,18 +136,39 @@ const Contact = () => {
 
           <div className="max-w-3xl mx-auto">
             <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <details key={index} className="bg-white rounded-lg shadow-md">
-                  <summary className="p-6 cursor-pointer hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-grow-green focus:ring-inset">
-                    <h3 className="text-lg font-semibold text-gray-800 pr-8">
-                      {faq.question}
-                    </h3>
-                  </summary>
-                  <div className="px-6 pb-6">
-                    <p className="text-gray-600">{faq.answer}</p>
-                  </div>
-                </details>
-              ))}
+          {faqs.map((faq, index) => (
+  <details
+    key={index}
+    className="group bg-white rounded-2xl shadow-md hover:shadow-xl 
+               transition-all duration-500 border border-gray-100 
+               hover:border-grow-green overflow-hidden"
+  >
+    <summary
+      className="flex justify-between items-center p-6 cursor-pointer 
+                 list-none hover:bg-gray-50 transition-colors duration-300"
+    >
+      <h3 className="text-lg font-semibold text-gray-800 group-hover:text-grow-green transition-colors duration-300">
+        {faq.question}
+      </h3>
+
+      {/* Arrow Icon */}
+      <span
+        className="ml-4 text-grow-green transform transition-transform duration-500 group-open:rotate-180"
+      >
+        ▼
+      </span>
+    </summary>
+
+    <div
+      className="px-6 pb-6 text-gray-600 leading-relaxed 
+                 transition-all duration-500 ease-in-out 
+                 group-open:animate-fadeIn"
+    >
+      {faq.answer}
+    </div>
+  </details>
+))}
+
             </div>
           </div>
 

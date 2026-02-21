@@ -54,7 +54,7 @@ const MissionVision = ({ showSlogan = true, layout = 'default' }) => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {showSlogan && (
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 mt-7">
           <div className="bg-gradient-to-r from-grow-green to-grow-accent text-white p-6 rounded-xl shadow-lg mb-8">
             <p className="text-2xl md:text-3xl font-bold">
               "{slogan}"
@@ -72,11 +72,11 @@ const MissionVision = ({ showSlogan = true, layout = 'default' }) => {
               Our Vision
             </h2>
           </div>
-          <div className="bg-gradient-to-r from-grow-green to-grow-accent text-white p-4 rounded-lg mb-6">
+          {/* <div className="bg-gradient-to-r from-grow-green to-grow-accent text-white p-4 rounded-lg mb-6">
             <p className="text-lg font-semibold">
               "{slogan}"
             </p>
-          </div>
+          </div> */}
           <p className="text-lg text-gray-700 mb-6 leading-relaxed">
             {visionStatement}
           </p>
@@ -110,11 +110,11 @@ const MissionVision = ({ showSlogan = true, layout = 'default' }) => {
               Our Mission
             </h2>
           </div>
-          <div className="bg-gradient-to-r from-grow-earth to-grow-gold text-white p-4 rounded-lg mb-6">
+          {/* <div className="bg-gradient-to-r from-grow-earth to-grow-gold text-white p-4 rounded-lg mb-6">
             <p className="text-lg font-semibold">
               "{slogan}"
             </p>
-          </div>
+          </div> */}
           <p className="text-lg text-gray-700 mb-6 leading-relaxed">
             {missionStatement}
           </p>

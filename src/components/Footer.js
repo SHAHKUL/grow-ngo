@@ -66,10 +66,10 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
             <div className="space-y-2 text-grow-accent">
-              <p>123 Community Lane</p>
-              <p>City, State 12345</p>
-              <p>Phone: (555) 123-4567</p>
-              <p>Email: info@growfoundation.org</p>
+              <p>No:1, NETAJI NAGAR, ERAIYANUR, TINDIVANAM, VILLUPURAM, </p>
+              <p> TAMIL NADU -604001</p>
+              <p>Phone: (+91) 9092628338</p>
+              <p>Email: growswf@gmail.com</p>
             </div>
           </div>
         </div>

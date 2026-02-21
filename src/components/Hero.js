@@ -5,8 +5,9 @@ const Hero = ({ title, subtitle, showButtons = true, backgroundImage = null }) =
   const heroBackgrounds = {
     home: `linear-gradient(135deg, rgba(45,80,22,0.8) 0%, rgba(90,124,58,0.7) 50%, rgba(143,191,159,0.6) 100%), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D&auto=format&fit=crop&w=1920&q=80')`,
     about: `linear-gradient(135deg, rgba(139,111,71,0.9) 0%, rgba(45,80,22,0.8) 50%, rgba(135,206,235,0.7) 100%), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D&auto=format&fit=crop&w=1920&q=80')`,
-    programs: `linear-gradient(135deg, rgba(135,206,235,0.9) 0%, rgba(45,80,22,0.8) 50%, rgba(143,191,159,0.7) 100%), url('https://images.unsplash.com/photo-1471287999315-bd04a3b4bf1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D&auto=format&fit=crop&w=1920&q=80')`,
-    default: `linear-gradient(135deg, rgba(45,80,22,0.8) 0%, rgba(90,124,58,0.7) 50%, rgba(143,191,159,0.6) 100%), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D&auto=format&fit=crop&w=1920&q=80')`
+    programs: `linear-gradient(135deg, rgba(135,206,235,0.9) 0%, rgba(45,80,22,0.8) 50%, rgba(143,191,159,0.7) 100%), url('https://bcdn.mindler.com/bloglive/wp-content/uploads/2018/01/06144354/Social-Work-Career-in-India-770x385.png')`,
+    contact: `linear-gradient(135deg, rgba(45,80,22,0.8) 0%, rgba(90,124,58,0.7) 50%, rgba(143,191,159,0.6) 100%), url('https://static.vecteezy.com/system/resources/thumbnails/007/067/602/small/businessman-shows-outstretched-hand-with-social-icon-on-virtual-screen-contact-us-free-photo.jpg')`,
+    default: `linear-gradient(135deg, rgba(45,80,22,0.8) 0%, rgba(90,124,58,0.7) 50%, rgba(143,191,159,0.6) 100%), url('https://apollouniversity.edu.in/blog/wp-content/uploads/2023/10/Become-a-Catalyst-for-Positive-Change-with-Master-of-Social-Work-Course-min-1568x419-1.webp')`
   };
 
   const backgroundStyle = backgroundImage ? heroBackgrounds[backgroundImage] || heroBackgrounds.default : heroBackgrounds.default;

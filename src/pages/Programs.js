@@ -115,7 +115,7 @@ const Programs = () => {
       />
 
       {/* Program Navigation */}
-      <section className="py-8 bg-white sticky top-16 z-40 border-b">
+     <section className="py-8 bg-white sticky top-[100px] z-40 border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-4">
             <button
@@ -271,7 +271,7 @@ const Programs = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => scrollToSection(environmentRef)}
-              className="btn-primary bg-white text-grow-green hover:bg-gray-100"
+              className="btn-primary text-white bg-white text-grow-green hover:bg-gray-100"
             >
               Explore Programs
             </button>

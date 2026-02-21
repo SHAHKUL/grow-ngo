@@ -56,7 +56,7 @@ const GetInvolved = () => {
       />
 
       {/* Tab Navigation */}
-      <section className="py-8 bg-white sticky top-16 z-40 border-b">
+      <section className="py-8 bg-white sticky top-[100px] z-40 border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-4">
             <button
