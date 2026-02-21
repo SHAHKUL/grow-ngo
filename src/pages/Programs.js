@@ -9,8 +9,20 @@ const Programs = () => {
   const communityRef = useRef(null);
 
   const scrollToSection = (ref) => {
-    ref.current?.scrollIntoView({ behavior: "smooth" });
-  };
+  if (ref.current) {
+    const yOffset = -160; // adjust based on navbar height
+    const y =
+      ref.current.getBoundingClientRect().top +
+      window.pageYOffset +
+      yOffset;
+
+    window.scrollTo({
+      top: y,
+      behavior: "smooth",
+    });
+  }
+};
+
 
   const environmentPrograms = [
     {
@@ -124,35 +136,34 @@ const Programs = () => {
     "bg-gray-800 border-gray-700",
     "bg-green-900 border-green-800",
     "bg-emerald-900 border-emerald-800",
-
     "bg-slate-900 border-slate-800",
   ];
 
   const bgColorTwo = [
-  "bg-green-900 border border-green-800",
-  "bg-emerald-900 border border-emerald-800",
-  "bg-teal-900 border border-teal-800",
-  "bg-lime-900 border border-lime-800",
-  "bg-slate-900 border border-slate-800",
-  "bg-gray-900 border border-gray-800"
-];
+    "bg-green-900 border border-green-800",
+    "bg-emerald-900 border border-emerald-800",
+    "bg-teal-900 border border-teal-800",
+    "bg-lime-900 border border-lime-800",
+    "bg-slate-900 border border-slate-800",
+    "bg-gray-900 border border-gray-800",
+  ];
 
-const bgColorThree = [
-  "bg-red-900 border border-red-800",
-  "bg-emerald-900 border border-emerald-800",
-  "bg-teal-900 border border-teal-800",
-  "bg-lime-900 border border-lime-800",
-  "bg-sky-900 border border-sky-800",
-  "bg-indigo-900 border border-indigo-800"
-];
-const communityBgColors = [
-  "bg-amber-900 border border-amber-800",
-  "bg-orange-900 border border-orange-800",
-  "bg-yellow-900 border border-yellow-800",
-  "bg-stone-900 border border-stone-800",
-  "bg-rose-900 border border-rose-800",
-  "bg-fuchsia-900 border border-fuchsia-800"
-];
+  const bgColorThree = [
+    "bg-red-900 border border-red-800",
+    "bg-emerald-900 border border-emerald-800",
+    "bg-teal-900 border border-teal-800",
+    "bg-lime-900 border border-lime-800",
+    "bg-sky-900 border border-sky-800",
+    "bg-indigo-900 border border-indigo-800",
+  ];
+  const communityBgColors = [
+    "bg-amber-900 border border-amber-800",
+    "bg-orange-900 border border-orange-800",
+    "bg-yellow-900 border border-yellow-800",
+    "bg-stone-900 border border-stone-800",
+    "bg-rose-900 border border-rose-800",
+    "bg-fuchsia-900 border border-fuchsia-800",
+  ];
 
   return (
     <div>
@@ -255,30 +266,28 @@ const communityBgColors = [
             </p>
           </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-  {skillPrograms.map((program, index) => (
-    <div
-      key={index}
-      className={`rounded-lg p-6 
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {skillPrograms.map((program, index) => (
+              <div
+                key={index}
+                className={`rounded-lg p-6 
         shadow-lg hover:shadow-2xl 
         transition-all duration-300 
         text-center 
         ${bgColorTwo[index % bgColorTwo.length]}`}
-    >
-      <div className="text-4xl mb-4 text-green-400">
-        {program.icon}
-      </div>
+              >
+                <div className="text-4xl mb-4 text-green-400">
+                  {program.icon}
+                </div>
 
-      <h3 className="text-xl font-semibold text-gray-100 mb-3">
-        {program.title}
-      </h3>
+                <h3 className="text-xl font-semibold text-gray-100 mb-3">
+                  {program.title}
+                </h3>
 
-      <p className="text-gray-300">
-        {program.description}
-      </p>
-    </div>
-  ))}
-</div>
+                <p className="text-gray-300">{program.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -297,33 +306,34 @@ const communityBgColors = [
             </p>
           </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-  {educationPrograms.map((program, index) => (
-    <div
-      key={index}
-      className={`rounded-lg p-6 
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {educationPrograms.map((program, index) => (
+              <div
+                key={index}
+                className={`rounded-lg p-6 
         shadow-md hover:shadow-xl 
         transition-all duration-300 
         text-center 
         ${bgColorThree[index % bgColorThree.length]}`}
-    >
-      <div className="text-4xl mb-4 text-green-600">
-        {program.icon}
-      </div>
+              >
+                <div className="text-4xl mb-4 text-green-600">
+                  {program.icon}
+                </div>
 
-   <h3 className="text-xl font-bold mb-3 
+                <h3
+                  className="text-xl font-bold mb-3 
                bg-gradient-to-r from-green-300 to-emerald-400 
-               bg-clip-text text-transparent">
-  {program.title}
-</h3>
+               bg-clip-text text-transparent"
+                >
+                  {program.title}
+                </h3>
 
-<p className="text-gray-300 leading-relaxed text-sm">
-  {program.description}
-</p>
-
-    </div>
-  ))}
-</div>
+                <p className="text-gray-300 leading-relaxed text-sm">
+                  {program.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -341,102 +351,75 @@ const communityBgColors = [
             </p>
           </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-  {communityPrograms.map((program, index) => (
-    <div
-      key={index}
-      className={`group rounded-lg p-6 
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {communityPrograms.map((program, index) => (
+              <div
+                key={index}
+                className={`group rounded-lg p-6 
         shadow-lg hover:shadow-2xl 
         transition-all duration-300 
         text-center 
         ${communityBgColors[index % communityBgColors.length]}`}
-    >
-      <div className="text-4xl mb-4 text-green-300">
-        {program.icon}
-      </div>
+              >
+                <div className="text-4xl mb-4 text-green-300">
+                  {program.icon}
+                </div>
 
-      <h3 className="text-xl font-bold mb-3 
+                <h3
+                  className="text-xl font-bold mb-3 
                      bg-gradient-to-r from-green-300 to-lime-400 
-                     bg-clip-text text-transparent">
-        {program.title}
-      </h3>
+                     bg-clip-text text-transparent"
+                >
+                  {program.title}
+                </h3>
 
-      <p className="text-gray-300 leading-relaxed text-sm">
-        {program.description}
-      </p>
-    </div>
-  ))}
-</div>
+                <p className="text-gray-300 leading-relaxed text-sm">
+                  {program.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Get Involved CTA */}
-      {/* <section className="py-16 bg-gradient-to-r from-grow-green to-grow-light-green text-white">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
             Join Our Programs
           </h2>
-          <p className="text-xl mb-8 text-grow-accent">
+
+          <p className="text-lg md:text-xl mb-8 text-gray-600 max-w-3xl mx-auto">
             Whether you want to volunteer, donate, or participate in our
             programs, there are many ways to get involved and make a difference.
           </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => scrollToSection(environmentRef)}
-              className="btn-primary text-white bg-white text-grow-green hover:bg-gray-100"
-            >
-              Explore Programs
-            </button>
-            <button
-              onClick={() => (window.location.href = "/get-involved")}
-              className="btn-secondary border-white text-white hover:bg-white hover:text-grow-green"
-            >
-              Get Involved
-            </button>
-          </div>
-        </div>
-      </section> */}
-      <section className="py-16 bg-white">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-
-    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-      Join Our Programs
-    </h2>
-
-    <p className="text-lg md:text-xl mb-8 text-gray-600 max-w-3xl mx-auto">
-      Whether you want to volunteer, donate, or participate in our
-      programs, there are many ways to get involved and make a difference.
-    </p>
-
-    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-
-      <button
-        onClick={() => scrollToSection(environmentRef)}
-        className="px-6 py-3 rounded-lg 
+              className="px-6 py-3 rounded-lg 
                    bg-grow-green text-white 
                    hover:bg-green-700 
                    transition-all duration-300 
                    shadow-md hover:shadow-lg"
-      >
-        Explore Programs
-      </button>
+            >
+              Explore Programs
+            </button>
 
-      <button
-        onClick={() => (window.location.href = "/get-involved")}
-        className="px-6 py-3 rounded-lg 
+            <button
+              onClick={() => (window.location.href = "/get-involved")}
+              className="px-6 py-3 rounded-lg 
                    border-2 border-grow-green 
                    text-grow-green 
                    hover:bg-grow-green 
                    hover:text-white 
                    transition-all duration-300"
-      >
-        Get Involved
-      </button>
-
-    </div>
-  </div>
-</section>
-
+            >
+              Get Involved
+            </button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
