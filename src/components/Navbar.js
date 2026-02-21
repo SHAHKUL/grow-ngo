@@ -33,23 +33,39 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.path}
-                to={link.path}
-                className={({ isActive }) =>
-                  `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
-                    isActive
-                      ? "text-grow-green bg-grow-accent bg-opacity-20"
-                      : "text-gray-700 hover:text-grow-green hover:bg-gray-100"
-                  }`
-                }
-              >
-                {link.label}
-              </NavLink>
-            ))}
-          </div>
+         <div className="hidden md:flex items-center space-x-8">
+  {navLinks.map((link) => (
+    <NavLink
+      key={link.path}
+      to={link.path}
+      className={({ isActive }) =>
+        `relative px-4 py-2 rounded-md 
+        text-base lg:text-lg font-medium 
+        transition-all duration-300 ease-in-out 
+        ${
+          isActive
+            ? "text-grow-green font-bold"
+            : "text-gray-700 hover:text-grow-green"
+        }`
+      }
+    >
+      {({ isActive }) => (
+        <span
+          className={`relative inline-block transition-all duration-300 
+            ${
+              isActive
+                ? "after:absolute after:left-0 after:-bottom-1 after:h-[3px] after:w-full after:bg-grow-green"
+                : "after:absolute after:left-0 after:-bottom-1 after:h-[3px] after:w-0 after:bg-grow-green hover:after:w-full after:transition-all after:duration-300"
+            }`}
+        >
+          {link.label}
+        </span>
+      )}
+    </NavLink>
+  ))}
+</div>
+
+
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
