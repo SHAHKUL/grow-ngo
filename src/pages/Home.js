@@ -126,48 +126,65 @@ const Home = () => {
       </section>
 
       {/* Impact Statistics */}
-      <section className="py-16 bg-gradient-to-r from-grow-accent to-grow-mint bg-opacity-30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-4">
-              Our Impact
-            </h2>
-            <p className="text-lg text-gray-600">
-              Making a difference, one community at a time
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {impactStats.map((stat, index) => (
-              <div
-                key={index}
-                className="group text-center bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl 
-               transition-all duration-500 transform  hover:scale-105
-               border border-gray-100 "
-              >
-                <div
-                  className="text-4xl md:text-5xl font-extrabold text-grow-green mb-3 
-                    transition-all duration-500 group-hover:text-green-600"
-                >
-                  {stat.number}
-                </div>
+    <section className="py-16 bg-gradient-to-r from-emerald-800 via-green-900 to-emerald-950">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    {/* Section Header */}
+    <div className="text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+        Our Impact
+      </h2>
 
-                <div
-                  className="text-gray-600 font-semibold text-sm md:text-base 
-                    group-hover:text-gray-800 transition-colors duration-300"
-                >
-                  {stat.label}
-                </div>
+      <p className="text-lg text-emerald-100">
+        Making a difference, one community at a time
+      </p>
+    </div>
 
-                {/* Decorative underline animation */}
-                <div
-                  className="h-1 w-0 bg-grow-green mx-auto mt-3 
-                    transition-all duration-500 group-hover:w-12 rounded-full"
-                ></div>
-              </div>
-            ))}
+    {/* Stats Grid */}
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+      {impactStats.map((stat, index) => (
+        <div
+          key={index}
+          className="group text-center 
+                     bg-white/95 backdrop-blur-sm 
+                     rounded-2xl p-6 
+                     shadow-xl hover:shadow-2xl
+                     transition-all duration-500 
+                     transform hover:scale-105
+                     border border-white/20"
+        >
+          {/* Number */}
+          <div
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl 
+                       font-extrabold text-emerald-700 mb-3
+                       transition-all duration-500 
+                       group-hover:text-emerald-600"
+          >
+            {stat.number}
           </div>
+
+          {/* Label */}
+          <div
+            className="text-xs sm:text-sm md:text-base lg:text-lg
+                       text-gray-700 font-semibold
+                       group-hover:text-gray-900 
+                       transition-colors duration-300"
+          >
+            {stat.label}
+          </div>
+
+          {/* Decorative Line */}
+          <div
+            className="h-1 w-8 bg-emerald-600 mx-auto mt-3 
+                       transition-all duration-500 
+                       group-hover:w-12 rounded-full"
+          ></div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Testimonials */}
       <section className="py-16 section-gradient">

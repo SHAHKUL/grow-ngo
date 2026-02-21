@@ -22,30 +22,38 @@ const MissionVision = ({ showSlogan = true, layout = 'default' }) => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Vision */}
-          <div className="bg-gradient-to-br from-white to-grow-accent bg-opacity-20 rounded-xl p-8 shadow-lg">
-            <div className="flex items-center mb-6">
-              <div className="text-4xl mr-4">🌍</div>
-              <h2 className="text-2xl md:text-3xl font-bold gradient-text">
-                Our Vision
-              </h2>
-            </div>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              {visionStatement}
-            </p>
-          </div>
+       <div className="bg-gradient-to-br from-gray-800 via-gray-900 to-black 
+                rounded-2xl p-8 shadow-2xl border border-white/10">
+  <div className="flex items-center mb-6">
+    <div className="text-4xl mr-4">🌍</div>
+    <h2 className="text-2xl md:text-3xl font-bold text-white">
+      Our Vision
+    </h2>
+  </div>
+
+  <p className="text-lg text-gray-300 leading-relaxed">
+    {visionStatement}
+  </p>
+</div>
+
 
           {/* Mission */}
-          <div className="bg-gradient-to-br from-white to-grow-earth bg-opacity-20 rounded-xl p-8 shadow-lg">
-            <div className="flex items-center mb-6">
-              <div className="text-4xl mr-4">🤝</div>
-              <h2 className="text-2xl md:text-3xl font-bold gradient-text">
-                Our Mission
-              </h2>
-            </div>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              {missionStatement}
-            </p>
-          </div>
+       <div className="bg-gradient-to-br from-amber-800 via-orange-900 to-amber-950 
+                rounded-2xl p-8 shadow-2xl border border-amber-500/20
+                transition-all duration-500 hover:scale-[1.02]">
+  <div className="flex items-center mb-6">
+    <div className="text-4xl mr-4">🤝</div>
+
+    <h2 className="text-2xl md:text-3xl font-bold text-white">
+      Our Mission
+    </h2>
+  </div>
+
+  <p className="text-lg text-amber-100 leading-relaxed">
+    {missionStatement}
+  </p>
+</div>
+
         </div>
       </div>
     );
