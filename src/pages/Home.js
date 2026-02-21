@@ -126,65 +126,63 @@ const Home = () => {
       </section>
 
       {/* Impact Statistics */}
-    <section className="py-16 bg-gradient-to-r from-emerald-800 via-green-900 to-emerald-950">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    {/* Section Header */}
-    <div className="text-center mb-12">
-      <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-        Our Impact
-      </h2>
+      <section className="py-16 bg-gradient-to-r from-emerald-800 via-green-900 to-emerald-950">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Our Impact
+            </h2>
 
-      <p className="text-lg text-emerald-100">
-        Making a difference, one community at a time
-      </p>
-    </div>
+            <p className="text-lg text-emerald-100">
+              Making a difference, one community at a time
+            </p>
+          </div>
 
-    {/* Stats Grid */}
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-      {impactStats.map((stat, index) => (
-        <div
-          key={index}
-          className="group text-center 
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            {impactStats.map((stat, index) => (
+              <div
+                key={index}
+                className="group text-center 
                      bg-white/95 backdrop-blur-sm 
                      rounded-2xl p-6 
                      shadow-xl hover:shadow-2xl
                      transition-all duration-500 
                      transform hover:scale-105
                      border border-white/20"
-        >
-          {/* Number */}
-          <div
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl 
+              >
+                {/* Number */}
+                <div
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl 
                        font-extrabold text-emerald-700 mb-3
                        transition-all duration-500 
                        group-hover:text-emerald-600"
-          >
-            {stat.number}
-          </div>
+                >
+                  {stat.number}
+                </div>
 
-          {/* Label */}
-          <div
-            className="text-xs sm:text-sm md:text-base lg:text-lg
+                {/* Label */}
+                <div
+                  className="text-xs sm:text-sm md:text-base lg:text-lg
                        text-gray-700 font-semibold
                        group-hover:text-gray-900 
                        transition-colors duration-300"
-          >
-            {stat.label}
-          </div>
+                >
+                  {stat.label}
+                </div>
 
-          {/* Decorative Line */}
-          <div
-            className="h-1 w-8 bg-emerald-600 mx-auto mt-3 
+                {/* Decorative Line */}
+                <div
+                  className="h-1 w-8 bg-emerald-600 mx-auto mt-3 
                        transition-all duration-500 
                        group-hover:w-12 rounded-full"
-          ></div>
+                ></div>
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
-
+      </section>
 
       {/* Testimonials */}
       <section className="py-16 section-gradient">
@@ -220,25 +218,37 @@ const Home = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-br from-grow-green via-grow-light-green to-grow-accent text-white relative overflow-hidden">
+      <section className="py-16 bg-white relative overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
             Join Us in Making a Difference
           </h2>
-          <p className="text-xl mb-8 text-white opacity-90">
+
+          <p className="text-lg md:text-xl mb-8 text-gray-600 max-w-3xl mx-auto">
             Your support can help us reach more communities and create lasting
             change.
           </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/get-involved"
-              className="btn-primary bg-white text-white text-grow-green hover:bg-grow-accent hover:text-white"
+              className="px-6 py-3 rounded-lg 
+                   bg-grow-green text-white 
+                   hover:bg-green-700 
+                   transition-all duration-300 
+                   shadow-md hover:shadow-lg"
             >
               Get Involved
             </Link>
+
             <Link
               to="/contact"
-              className="btn-secondary border-2 border-white text-white hover:bg-white hover:text-grow-green"
+              className="px-6 py-3 rounded-lg 
+                   border-2 border-grow-green 
+                   text-grow-green 
+                   hover:bg-grow-green 
+                   hover:text-white 
+                   transition-all duration-300"
             >
               Contact Us
             </Link>
