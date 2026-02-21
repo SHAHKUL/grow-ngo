@@ -7,7 +7,8 @@ const Contact = () => {
     {
       icon: "📍",
       title: "Address",
-      details: "No:1, Netaji Nagar, Eraiyanur, Tindivanam, Villupuram, Tamil Nadu-604001",
+      details:
+        "No:1, Netaji Nagar, Eraiyanur, Tindivanam, Villupuram, Tamil Nadu-604001",
     },
     {
       icon: "📞",
@@ -56,7 +57,7 @@ const Contact = () => {
         title="Contact Us"
         subtitle="Get in touch with GROW Foundation. We'd love to hear from you and discuss how we can work together."
         showButtons={false}
-         backgroundImage="contact"
+        backgroundImage="contact"
       />
 
       {/* Contact Information */}
@@ -97,13 +98,17 @@ const Contact = () => {
             <div>
               <h3 className="text-2xl font-bold text-gray-800 mb-6">Find Us</h3>
               <div className="bg-gray-200 rounded-lg h-96 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">🗺️</div>
-                  <p className="text-gray-600 font-medium">Interactive Map</p>
-                  <p className="text-gray-500 text-sm mt-2">
-                    123 Community Lane, City, State 12345
-                  </p>
-                </div>
+                <iframe
+                  title="GROW NGO Office Location"
+                  src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d57108.45486977128!2d79.60711102049119!3d12.22815428374812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sNo%3A1%2C%20Netaji%20Nagar%2C%20Eraiyanur%2C%20Tindivanam%2C%20Villupuram%2C%20Tamil%20Nadu-604001!5e1!3m2!1sen!2sin!4v1771660661689!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full"
+                ></iframe>
               </div>
 
               <div className="mt-6 bg-grow-accent bg-opacity-20 rounded-lg p-6">
@@ -136,39 +141,36 @@ const Contact = () => {
 
           <div className="max-w-3xl mx-auto">
             <div className="space-y-6">
-          {faqs.map((faq, index) => (
-  <details
-    key={index}
-    className="group bg-white rounded-2xl shadow-md hover:shadow-xl 
+              {faqs.map((faq, index) => (
+                <details
+                  key={index}
+                  className="group bg-white rounded-2xl shadow-md hover:shadow-xl 
                transition-all duration-500 border border-gray-100 
                hover:border-grow-green overflow-hidden"
-  >
-    <summary
-      className="flex justify-between items-center p-6 cursor-pointer 
+                >
+                  <summary
+                    className="flex justify-between items-center p-6 cursor-pointer 
                  list-none hover:bg-gray-50 transition-colors duration-300"
-    >
-      <h3 className="text-lg font-semibold text-gray-800 group-hover:text-grow-green transition-colors duration-300">
-        {faq.question}
-      </h3>
+                  >
+                    <h3 className="text-lg font-semibold text-gray-800 group-hover:text-grow-green transition-colors duration-300">
+                      {faq.question}
+                    </h3>
 
-      {/* Arrow Icon */}
-      <span
-        className="ml-4 text-grow-green transform transition-transform duration-500 group-open:rotate-180"
-      >
-        ▼
-      </span>
-    </summary>
+                    {/* Arrow Icon */}
+                    <span className="ml-4 text-grow-green transform transition-transform duration-500 group-open:rotate-180">
+                      ▼
+                    </span>
+                  </summary>
 
-    <div
-      className="px-6 pb-6 text-gray-600 leading-relaxed 
+                  <div
+                    className="px-6 pb-6 text-gray-600 leading-relaxed 
                  transition-all duration-500 ease-in-out 
                  group-open:animate-fadeIn"
-    >
-      {faq.answer}
-    </div>
-  </details>
-))}
-
+                  >
+                    {faq.answer}
+                  </div>
+                </details>
+              ))}
             </div>
           </div>
 
